@@ -8,11 +8,16 @@ namespace Telefon_Absztrakt
 {
     public class OkosTelefon : NormalTelefon
     {
-        public int os;
+        public string OS;
 
-        public OkosTelefon(int ar, List<string> tudja, int maxtoltottseg, int aktualistoltottseg, int os) : base(ar, tudja, maxtoltottseg, aktualistoltottseg)
+        public OkosTelefon(int ar, List<string> tudja, int maxtoltottseg, int aktualistoltottseg, string OS) : base(ar, tudja, maxtoltottseg, aktualistoltottseg)
         {
-            this.os = os;
+            this.OS = OS;
+            this.tudja.Add("Internet");
+        }
+        public bool Telepitheto(string OS)
+        {
+            return this.OS.Equals(OS);
         }
     }
 }
